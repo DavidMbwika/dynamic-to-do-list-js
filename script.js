@@ -53,6 +53,28 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   
+    // Create a new li element
+const taskListItem = document.createElement('li');
+taskListItem.textContent = taskText;
+
+// Create a new button element for removing the task
+const removeButton = document.createElement('button');
+removeButton.textContent = "Remove";
+removeButton.className = 'remove-btn';
+
+// Assign an onclick event to the remove button
+removeButton.onclick = () => {
+  taskList.removeChild(taskListItem);
+};
+
+// Append the remove button to the li element
+taskListItem.appendChild(removeButton);
+
+// Append the li to taskList
+taskList.appendChild(taskListItem);
+
+// Clear the task input field
+taskInput.value = "";
     // Invoke the addTask function on DOMContentLoaded (Outside addTask)
     // This line is not needed as we are already calling addTask inside the event listener
     // addTask();
