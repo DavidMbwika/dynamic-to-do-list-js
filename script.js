@@ -19,7 +19,7 @@ taskListItem.textContent = taskText;
 
 let removeButton = document.createElement('button');
 removeButton.textContent = "Remove";
-removeButton.className = 'remove-btn';
+removeButton.classList.add('remove-btn');
 
 removeButton.onclick = () => {
     taskList.removeChild(taskListItem);
